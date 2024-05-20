@@ -1,0 +1,23 @@
+#0训练使用voc数据集时的配置文件
+
+# PASCAL VOC dataset http://host.robots.ox.ac.uk/pascal/VOC/
+# Train command: python train.py --data voc.yaml
+# Default dataset location is next to /yolov5:
+#   /parent_folder
+#     /VOC
+#     /yolov5
+
+
+# 0如果自己下载了数据集，则将下行注释掉，否则会调用get_voc.sh脚本自动下载  download command/URL (optional)
+#download: bash data/scripts/get_voc.sh
+
+# 选择本次训练数据图片和标签的位置。train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
+train: VOC-2012/images/train/  # 16551 images
+val: VOC-2012/images/val/  # 4952 images
+
+# number of classes
+nc: 20
+
+# class names
+names: ['aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car', 'cat', 'chair', 'cow', 'diningtable', 'dog',
+        'horse', 'motorbike', 'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor']
